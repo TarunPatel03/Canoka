@@ -85,6 +85,3 @@ cp .env.example .env.local
 | `CANVAS_BASE_URL` | Your institution's Canvas URL, e.g. `https://canvas.uts.edu.au` |
 | `CANVAS_API_TOKEN` | Canvas → Account → Settings → New Access Token |
 | `AI_API_KEY` | Your AI provider's API key |
-
-
-

@@ -190,3 +190,11 @@ python selftest.py
 
 Runs the HTML conversion, weight computation and a full subject build against a
 mock Canvas. No network, no token needed.
+
+
+
+
+
+## Windows setup notes
+- Comment out the two `pyobjc-framework-*` lines in requirements.txt (macOS-only, breaks pip install on Windows)
+- Run `pip install tzdata` separately (Windows has no system timezone database, macOS/Linux does)
