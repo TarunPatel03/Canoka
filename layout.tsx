@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "StudyFlow",
-  description: "Canvas-synced notes, calendar, and quizzes for students.",
+  title: "Canoka",
+  description: "A simple student workspace for assignments, calendars, and notes.",
 };
 
 export default function RootLayout({
