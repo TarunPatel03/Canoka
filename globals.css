@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--ink: #282523;
+	--muted: #706b63;
+	--paper: #f4f0dd;
+	--cream: #e4e3c0;
+	--olive: #a1a58b;
+	--line: rgba(51, 53, 40, .22);
+	--wine: #492b32;
+	--wine-light: #75434a;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: #2d2c2c; color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+button, a { font: inherit; }
+button { cursor: pointer; }
+
+.workspace-shell { min-height: 100vh; display: flex; background: #2d2c2c; }
+.sidebar { width: 220px; flex: 0 0 220px; min-height: 100vh; background: var(--wine); color: #f4efdc; padding: 22px 16px; display: flex; flex-direction: column; }
+.brand-mark { width: 48px; height: 48px; border-radius: 50%; background: #e9e8ca; color: var(--wine); display: grid; place-items: center; font: 700 17px Georgia, serif; margin: 0 auto 46px; border: 1px solid #b8b89d; }
+.brand-mark span { font-size: 11px; margin-left: -2px; }
+.side-links { display: grid; gap: 12px; }
+.side-link { color: #f5f0dc; text-decoration: none; font-size: 20px; font-weight: 700; padding: 8px; border-radius: 6px; }
+.side-link.active, .side-link:hover { background: rgba(255,255,255,.08); }
+.side-icon { display: inline-block; width: 23px; font-size: 19px; }
+.sub-links { margin: -5px 0 18px 24px; border-left: 1px solid rgba(255,255,255,.35); display: grid; }
+.sub-link { border: 0; background: transparent; color: #d5ccc0; text-align: left; padding: 7px 8px; font-size: 16px; position: relative; }
+.sub-link.selected, .sub-link:hover { color: white; font-weight: 700; }
+.timeline-dot { width: 7px; height: 7px; border-radius: 50%; background: #f5f0dc; display: inline-block; margin: 0 6px 2px -12px; }
+.settings-button { margin-top: auto; border: 0; background: transparent; color: #f5f0dc; font-size: 21px; text-align: left; padding: 8px; }
+.main-panel { flex: 1; min-width: 0; background: var(--cream); }
+.topbar { height: 72px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: #d0d1a9; }
+.mobile-brand { font-size: 19px; font-weight: 700; }
+.view-tabs { display: flex; gap: 4px; background: rgba(255,255,255,.32); border-radius: 7px; padding: 4px; }
+.view-tab { border: 0; background: transparent; color: #5d5d52; border-radius: 5px; padding: 8px 18px; font-size: 14px; }
+.view-tab.active { background: var(--paper); color: var(--ink); font-weight: 700; box-shadow: 0 1px 2px #7775; }
+.avatar { border: 0; background: var(--wine); color: white; width: 36px; height: 36px; border-radius: 50%; font-weight: 700; font-size: 12px; }
+.content-area { padding: 34px 38px 48px; max-width: 1500px; margin: auto; }
+.page-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 26px; }
+.eyebrow { color: var(--muted); font: 12px Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 7px; }
+h1 { font-size: clamp(32px, 4vw, 53px); line-height: 1; margin: 0; letter-spacing: -.02em; }
+.heading-actions { display: flex; gap: 8px; align-items: center; }
+.icon-button, .today-button { border: 1px solid var(--line); background: var(--paper); color: var(--ink); height: 35px; border-radius: 4px; }
+.icon-button { width: 34px; font-size: 23px; line-height: 20px; }
+.today-button { padding: 0 15px; font: 12px Arial, sans-serif; font-weight: 700; }
+.calendar-frame { background: var(--olive); border: 1px solid rgba(45,45,35,.28); box-shadow: 0 7px 0 rgba(47,39,37,.12); }
+.legend { min-height: 42px; background: var(--paper); display: flex; align-items: center; justify-content: center; gap: 25px; border-bottom: 1px solid var(--line); color: #766e66; font: 10px Arial, sans-serif; }
+.legend span { white-space: nowrap; }
+.diamond { width: 8px; height: 8px; display: inline-block; transform: rotate(45deg); border: 1px solid var(--wine-light); margin-right: 7px; }
+.assessment { background: var(--wine-light); }.personal { background: #d6d7bb; }
+.week-header { height: 36px; display: grid; grid-template-columns: 56px repeat(7, 1fr); background: #e9e8ca; border-bottom: 1px solid var(--line); color: #665f58; font: 10px Arial, sans-serif; align-items: center; text-align: center; }
+.week-grid { display: flex; height: min(560px, 63vh); min-height: 430px; }
+.time-labels { width: 56px; flex: 0 0 56px; display: grid; grid-template-rows: repeat(10, 1fr); color: #e4e4c8; font: 9px Arial, sans-serif; text-align: right; padding: 3px 8px 0 0; }
+.day-columns { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); }
+.day-column { position: relative; border-left: 1px solid var(--line); background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(10% - 1px), var(--line) 10%); }
+.event { position: absolute; left: 7%; right: 7%; border-radius: 3px; padding: 5px 6px; font: 10px Arial, sans-serif; line-height: 1.2; color: #3c3d33; box-shadow: 0 1px 2px #5554; }
+.event small { display: block; color: #6f6d5a; margin-top: 2px; font-size: 8px; }.event-math { top: 65%; background: #efeecf; border-left: 3px solid var(--wine-light); }.event-english { top: 70%; background: #dddcb5; border-left: 3px solid #756744; }
+.month-grid { display: grid; grid-template-columns: repeat(7, 1fr); grid-auto-rows: minmax(90px, 1fr); min-height: 570px; }
+.month-weekday { background: #d7d8b4; padding: 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font: 11px Arial, sans-serif; text-align: center; }
+.month-cell { min-height: 89px; padding: 9px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #f1f0d8; font: 12px Arial, sans-serif; }.month-cell.highlighted { background: #91957b; }.mini-event { margin-top: 14px; background: #eeeecf; color: #43443a; border-radius: 2px; padding: 4px; font-size: 9px; }.mini-event.pale { background: #dddcb5; }
+.kanban-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; background: #a4a98d; padding: 25px 18px 45px; min-height: 590px; position: relative; }.kanban-column { background: rgba(242,240,218,.77); border-radius: 13px; padding: 12px 9px; }.kanban-column h2 { background: var(--wine-light); border-radius: 4px; color: white; text-align: center; font: 11px Arial, sans-serif; padding: 6px; margin: 0 0 9px; }.task-card { display: flex; gap: 8px; background: #f5f1db; border: 1px solid #d9d6bf; border-radius: 3px; padding: 8px; margin-bottom: 8px; font-family: Arial, sans-serif; box-shadow: 0 1px 2px #6d6b5a44; }.task-card strong { display: block; font-size: 10px; }.task-card p { color: #777365; font-size: 8px; line-height: 1.25; margin: 4px 0; }.task-card small { color: #9c6a59; font-size: 8px; }.task-check { width: 9px; height: 9px; border: 1px solid #9d9d83; flex: 0 0 9px; margin-top: 2px; }.priority-label { position: absolute; top: 28px; left: 48%; background: #f05c43; color: white; border-radius: 4px; padding: 7px 10px; font: 700 14px Arial, sans-serif; box-shadow: 0 2px 2px #5556; }
+
+@media (max-width: 760px) { .sidebar { width: 66px; flex-basis: 66px; padding: 16px 8px; align-items: center; }.brand-mark { width: 38px; height: 38px; margin-bottom: 30px; font-size: 13px; }.side-link { font-size: 0; padding: 9px; }.side-icon { font-size: 19px; }.sub-links { margin: -4px 0 10px; border: 0; }.sub-link { font-size: 0; padding: 7px; }.timeline-dot { margin: 0; }.settings-button { font-size: 18px; }.topbar { height: 62px; padding: 0 14px; }.mobile-brand { font-size: 16px; }.view-tabs { order: 2; }.view-tab { padding: 7px 8px; font-size: 11px; }.avatar { order: 3; width: 30px; height: 30px; }.content-area { padding: 25px 12px; }.page-heading { align-items: start; flex-direction: column; gap: 17px; }.page-heading h1 { font-size: 36px; }.heading-actions { align-self: end; }.legend { overflow-x: auto; justify-content: start; padding: 0 12px; gap: 15px; }.week-frame { overflow-x: auto; }.week-header, .week-grid { min-width: 720px; }.month-grid { min-width: 700px; }.month-frame { overflow-x: auto; }.kanban-board { min-width: 820px; }.kanban-board { overflow-x: auto; }.main-panel { overflow: hidden; } }
